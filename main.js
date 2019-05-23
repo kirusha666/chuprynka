@@ -1,7 +1,6 @@
 "use strict"
 
-const port = 3000,
-    http = require("http"),
+const http = require("http"),
     httpStatus = require("http-status-codes"),
     router = require("./router"),
     contentTypes = require("./contentTypes"),
@@ -57,5 +56,5 @@ router.get("/confetti_cuisine.js", (req, res) => {
   utils.getFile("public/js/confetti_cuisine.js", res);
 });
 
-http.createServer(router.handle).listen(port);
+http.createServer(router.handle).listen([process.env.PORT]);
 console.log(`The server is listening on port number: ${port}`);
